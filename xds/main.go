@@ -235,10 +235,10 @@ func main() {
 	for _, v := range upstreamPorts {
 
 		// ENDPOINT
-		log.Infof(">>>>>>>>>>>>>>>>>>> creating ENDPOINT for remoteHost:port %s:%d", backendHostName, v)
+		log.Infof(">>>>>>>>>>>>>>>>>>> creating ENDPOINT for remoteHost:port %s:%d", localhost, v)
 		hst := &core.Address{Address: &core.Address_SocketAddress{
 			SocketAddress: &core.SocketAddress{
-				Address:  backendHostName,
+				Address:  localhost,
 				Protocol: core.SocketAddress_TCP,
 				PortSpecifier: &core.SocketAddress_PortValue{
 					PortValue: uint32(v),
